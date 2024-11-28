@@ -1,0 +1,38 @@
+<!--<p>
+       {{nombreTarea}}
+</p>
+
+ <div>
+    @if (completada) {
+        <p class="completa">tarea completa</p>
+    }@else {
+        <p class="incompleta">tarea incompleta</p>
+    }
+ </div>
+
+ <button type="button" (click)="completarTarea()">
+        completar tarea
+ </button>
+ <hr/>-->
+
+<h1>Lista de tareas</h1>
+
+
+<button type="button" class="btn btn-completar"  [routerLink]="['/tareas/crear']">
+    Crear Tareas
+</button>
+ @for (t of tareas; track $index) {
+    <div class ="tarea">
+        <div class="tarea-id"> id: {{t.id}} </div>
+        <div class="tarea-nombre"> nombre: {{t.nombre}} </div>
+        <div class="tarea-acciones">
+            <button type="button" class="btn btn-completar" (click)="completarTarea()">
+                Completar Tarea
+            </button>
+            <button type="button" class="btn btn-eliminar" (click)="eliminarTarea(t)">
+                Eliminar Tarea
+            </button>
+        </div>
+    </div>
+}
+

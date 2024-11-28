@@ -1,0 +1,15 @@
+<p>crear-tarea works!</p>
+<button type="button"  [routerLink]="['/test']">
+    Regresar
+</button>
+<form [formGroup]="form">
+    <label>Tarea: </label>
+    <input type="text"  formControlName="tarea">
+    <br>
+    <label>Descripción: </label>
+    <input type="text" formControlName="descripcion">
+    <br>
+    <button type="submit" (click)="  crearTarea()" >
+       Enviar
+    </button>
+</form>
